@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     var judge = 0//决定输出数字的位数
     
-    var add = 0
+    var add = 0 
     
     var re = 0//判断result.text前是否存在符号
     @IBAction func number1(_ sender: Any) {
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
     
     
     @IBAction func plus(_ sender: Any) {
-        if add == 1{
+       if add == 1{
             
             let a = Double(result_1.text!)!
             
@@ -173,13 +173,13 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 2
-                
+                add = 1
                 re = 0
                 
             }
             
         }
-        
+
     }
     @IBAction func minus(_ sender: Any) {
         if add == 1{
@@ -215,6 +215,7 @@ class ViewController: UIViewController {
                 number = 1
                 
                 re = 0
+                add = 1
                 
             }
             
