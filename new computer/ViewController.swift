@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var result_1: UITextField!
     @IBOutlet weak var result_2: UITextField!
     @IBOutlet weak var result: UILabel!
+    var dd = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -91,9 +93,11 @@ class ViewController: UIViewController {
         
     }
     @IBAction func dot(_ sender: Any) {
-        result.text = result.text! + "."
+        if dd==0 {
+            result.text = result.text! + "."
+            dd = 1
+        }
         
-        judge = 1
     }
     
     
@@ -110,7 +114,7 @@ class ViewController: UIViewController {
             result_1.text = String(c)
             
             result.text = ""
-            
+            dd=0
             number = 2
             
         
@@ -128,7 +132,7 @@ class ViewController: UIViewController {
                 result_1.text = String(x)
                 
                 result.text = ""
-                
+                dd=0
                 number = 2
                 add = 1
                
@@ -152,7 +156,7 @@ class ViewController: UIViewController {
             result.text = ""
             
             number = 1
-            
+            dd=0
            
             
         }else{
@@ -170,8 +174,7 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 1
-                
-             
+                dd=0
                 add = 1
                 
             }
@@ -191,7 +194,7 @@ class ViewController: UIViewController {
             result_1.text = String(c)
             
             result.text = ""
-            
+            dd=0
             number = 3
             
           
@@ -211,9 +214,7 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 3
-                
-               
-                
+                dd=0
                 add = 1
                 
             }
@@ -233,7 +234,7 @@ class ViewController: UIViewController {
             result_1.text = String(c)
             
             result.text = ""
-            
+            dd=0
             number = 4
             
         
@@ -253,9 +254,7 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 4
-                
-             
-                
+                dd=0
                 add = 1
                 
             }
@@ -266,8 +265,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func clear(_ sender: Any) {
+        result_1.text=""
+        result_2.text=""
         result.text = ""
-        
+        dd = 0
+        add = 0
        
     }
     
@@ -305,7 +307,7 @@ class ViewController: UIViewController {
         
         result_2.text = String(c)
         
-        if judge == 1{
+        if dd == 1{
             
             result.text = String(format:"%f", d)
             
@@ -317,7 +319,7 @@ class ViewController: UIViewController {
         
      
         
-        judge = 0
+        dd = 0
         
         add = 0
         
