@@ -7,13 +7,10 @@
 //
 
 import UIKit
-
 class ViewController: UIViewController {
     @IBOutlet weak var result_1: UITextField!
     @IBOutlet weak var result_2: UITextField!
     @IBOutlet weak var result: UILabel!
-    var dd = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +20,8 @@ class ViewController: UIViewController {
     var judge = 0//决定输出数字的位数
     
     var add = 0 
+    
+    var dd = 0
     
     @IBAction func number1(_ sender: Any) {
         
@@ -94,7 +93,9 @@ class ViewController: UIViewController {
     }
     @IBAction func dot(_ sender: Any) {
         if dd==0 {
+            
             result.text = result.text! + "."
+            
             dd = 1
         }
         
@@ -103,20 +104,59 @@ class ViewController: UIViewController {
     
     
     @IBAction func plus(_ sender: Any) {
+        
        if add == 1{
+        
+        var d:Double
+        
+        var c:Double
+        
+        let x = Double(result_1.text!)!
+        
+        c = Double(result.text!)!
+        
+        if number == 1 {
             
-            let a = Double(result_1.text!)!
+            d = x - c
             
-            let b = Double(result.text!)!
+        }else if number == 2 {
             
-            let c = a + b
+            d = x + c
             
-            result_1.text = String(c)
+        }else if number == 3 {
             
-            result.text = ""
-            dd=0
-            number = 2
+            d = x * c
             
+        }else if number == 4 {
+            
+            d = x / (c)
+            
+        }else {
+            
+            d = 1000
+            
+        }
+        
+        result.text = ""
+        
+        if dd == 1{
+            
+            result_1.text = String(format:"%f", d)
+            
+        }else {
+            
+            result_1.text = String(format:"%.0f", d)
+            
+        }
+        
+        
+        
+        dd = 0
+        
+        add = 1
+        
+        number = 2
+        
         
             
         }else{
@@ -132,8 +172,11 @@ class ViewController: UIViewController {
                 result_1.text = String(x)
                 
                 result.text = ""
-                dd=0
+                
+                dd = 0
+                
                 number = 2
+                
                 add = 1
                
                 
@@ -143,20 +186,59 @@ class ViewController: UIViewController {
 
     }
     @IBAction func minus(_ sender: Any) {
+        
         if add == 1{
             
-            let a = Double(result_1.text!)!
+            var d:Double
             
-            let b = Double(result.text!)!
+            var c:Double
             
-            let c = a - b
+            let x = Double(result_1.text!)!
             
-            result_1.text = String(c)
+            c = Double(result.text!)!
             
-            result.text = ""
+            if number == 1 {
+                
+                d = x - c
+                
+            }else if number == 2 {
+                
+                d = x + c
+                
+            }else if number == 3 {
+                
+                d = x * c
+                
+            }else if number == 4 {
+                
+                d = x / (c)
+                
+            }else {
+                
+                d = 1000
+                
+            }
+            
+        result.text = ""
+            
+            if dd == 1{
+                
+                result_1.text = String(format:"%f", d)
+                
+            }else {
+                
+                result_1.text = String(format:"%.0f", d)
+                
+            }
+            
+            
+            
+            dd = 0
+            
+            add = 1
             
             number = 1
-            dd=0
+            
            
             
         }else{
@@ -174,7 +256,9 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 1
-                dd=0
+                
+                dd = 0
+                
                 add = 1
                 
             }
@@ -185,17 +269,56 @@ class ViewController: UIViewController {
     @IBAction func multiply(_ sender: Any) {
         if add == 1{
             
-            let a = Double(result_1.text!)!
+            var d:Double
             
-            let b = Double(result.text!)!
+            var c:Double
             
-            let c = a * b
+            let x = Double(result_1.text!)!
             
-            result_1.text = String(c)
+            c = Double(result.text!)!
             
-            result.text = ""
-            dd=0
+            if number == 1 {
+                
+                d = x - c
+                
+            }else if number == 2 {
+                
+                d = x + c
+                
+            }else if number == 3 {
+                
+                d = x * c
+                
+            }else if number == 4 {
+                
+                d = x / (c)
+                
+            }else {
+                
+                d = 1000
+                
+            }
+            
+        result.text = ""
+            
+            if dd == 1{
+                
+                result_1.text = String(format:"%f", d)
+                
+            }else {
+                
+                result_1.text = String(format:"%.0f", d)
+                
+            }
+            
+            
+            
+            dd = 0
+            
+            add = 1
+            
             number = 3
+            
             
           
             
@@ -214,7 +337,9 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 3
-                dd=0
+                
+                dd = 0
+                
                 add = 1
                 
             }
@@ -222,21 +347,61 @@ class ViewController: UIViewController {
         }
         
     }
+    
     @IBAction func divide(_ sender: Any) {
-        if add == 1{
+        
+        if add == 1
+        {
             
-            let a = Double(result_1.text!)!
+            var d:Double
             
-            let b = Double(result.text!)!
+            var c:Double
             
-            let c = a / b
+            let x = Double(result_1.text!)!
             
-            result_1.text = String(c)
+            c = Double(result.text!)!
             
-            result.text = ""
-            dd=0
+            if number == 1 {
+                
+                d = x - c
+                
+            }else if number == 2 {
+                
+                d = x + c
+                
+            }else if number == 3 {
+                
+                d = x * c
+                
+            }else if number == 4 {
+                
+                d = x / (c)
+                
+            }else {
+                
+                d = 1000
+                
+            }
+            
+        result.text = ""
+            
+            if dd == 1{
+                
+                result_1.text = String(format:"%f", d)
+                
+            }else {
+                
+                result_1.text = String(format:"%.0f", d)
+                
+            }
+            
+            
+            
+            dd = 0
+            
+            add = 1
+            
             number = 4
-            
         
             
         }else{
@@ -254,8 +419,11 @@ class ViewController: UIViewController {
                 result.text = ""
                 
                 number = 4
-                dd=0
+                
+                dd = 0
+                
                 add = 1
+                
                 
             }
             
@@ -265,10 +433,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func clear(_ sender: Any) {
+        
         result_1.text=""
+        
         result_2.text=""
+        
         result.text = ""
+        
         dd = 0
+        
         add = 0
        
     }
@@ -276,9 +449,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func equal(_ sender: Any) {
+        
         var d:Double
         
         var c:Double
+        
         let x = Double(result_1.text!)!
         
         c = (result.text! as NSString).doubleValue
